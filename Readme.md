@@ -31,7 +31,7 @@ It should create a new layer with the results.
 Requirements:
 
 * Python2.7 or Python 3.x
-* [NetworkX](https://networkx.github.io/)
+* [NetworkX](https://networkx.github.io/)>=2.4
 * Optionally, if you want to export PNG images from the command line (not needed for using the QGIS-plugin):
   * [Graphviz](https://graphviz.org/), and
   * One of:

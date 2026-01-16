@@ -125,9 +125,14 @@ def make_png(graph, path):
 
 
 def graph_components(graph):
-    # The graph may contain multiple components, but we can only handle one connected component. If the graph contains
-    # more than one connected component, we only use the largest one.
-    components = list(graph.subgraph(c) for c in nx.connected_components(graph))
+    """
+    Return connected components as actual subgraph copies, sorted by descending size (edge count).
+    Compatible with NetworkX >= 2.4 / 3.x.
+    """
+    # Build induced subgraphs for each connected component
+    components = [graph.subgraph(c).copy() for c in nx.connected_components(graph)]
+
+    # Sort by size (number of edges) largest-first, consistent with previous behavior
     components.sort(key=lambda c: c.size(), reverse=True)
 
     return components
