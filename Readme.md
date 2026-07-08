@@ -10,6 +10,22 @@ interpreter.
 
 Download the "Chinese Postman Solver", using the QGIS plugin manager.
 
+### Installing NetworkX into QGIS
+
+The plugin runs inside QGIS's own Python interpreter, so NetworkX must be
+installed there — installing it into your system Python has no effect. Recent
+QGIS 4 builds already bundle NetworkX. To check, run `import networkx` in the
+QGIS Python Console (Plugins → Python Console); if it succeeds, you are done.
+
+If it fails, install NetworkX into QGIS's Python and restart QGIS:
+
+* **Any platform**: in the QGIS Python Console, run
+  `import pip; pip.main(['install', 'networkx'])`
+* **Windows**: alternatively, open the "OSGeo4W Shell" installed alongside
+  QGIS and run `python -m pip install networkx`
+* **Linux**: alternatively, install your distribution's package, e.g.
+  `sudo apt install python3-networkx`
+
 ## Manual Installation - Linux / macOS
 
 1. Clone this repository.
